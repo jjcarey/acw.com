@@ -21,6 +21,7 @@ features[] = secondary_menu
 ;-------------- R E G I O N S -------------
 regions[header]         = Header
 regions[navigation]     = Navigation
+regions[hero_image]     = Hero Image
 regions[help]           = Help
 regions[highlighted]    = Highlighted
 regions[content]        = Content
