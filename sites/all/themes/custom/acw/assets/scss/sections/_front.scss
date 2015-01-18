@@ -1,0 +1,127 @@
+.front {
+
+	// Header // Home	// 100% of view height
+	header {
+		height: 100vh;
+	}
+
+	// The Couple 		// 70% of view height 
+	.block-views-couple-block {
+		height: 75vh;
+		background-color: rgba($black, 0.07);
+
+		h2 {
+			text-align: center;
+		}
+
+		.view {
+			@include grid-row();
+		}
+
+		.views-row {
+			@include grid-column(6);
+		}	
+	}
+
+	// Photo Strip Break
+	.block-views-photo-strip-block {
+		
+		.item-list {
+			
+			ul {
+				margin: 0;
+				
+				li {
+					float: left;
+					margin: 0;
+					list-style-type: none;
+				}
+			}
+		}
+
+	}
+
+	// Our Story 		// 50% of view height
+	.block-views-story-block {
+		clear: both;
+
+		height: 50vh;
+		background-color: rgba(red, 0.07);
+
+		h2 {
+			text-align: center;
+		}
+
+		.view {
+			@include grid-row();
+		}
+
+		.views-row {
+			@include grid-column(12);
+		}
+	}
+
+	// RSVP 			// 75% of view height
+	.block-views-rsvp-block {
+		height: 75vh;
+		background-color: rgba(green, 0.07);
+
+		h2 {
+			text-align: center;
+		}
+
+		.view {
+			@include grid-row();
+		}
+
+		.views-row {
+			@include grid-column(4);
+
+			&.views-row-first {
+				@include grid-column(12);
+			}
+		}
+	}
+
+	// Locations 		// 50% of view height
+	.block-views-locations-block {
+		height: 50vh;
+		background-color: rgba(blue, 0.07);
+
+		h2 {
+			text-align: center;
+		}
+
+		.view {
+			@include grid-row();
+		}
+
+		.views-row {
+			@include grid-column(4);
+		}	
+	}
+
+	// Registry 		// 50% of view height
+	.block-views-registry-block {
+		height: 50vh;
+		background-color: rgba(yellow, 0.01);
+
+		h2 {
+			text-align: center;
+		}
+
+		.view {
+			@include grid-row();
+		}
+
+		.views-row {
+			@include grid-column(4);
+		}	
+	}
+
+	// Home page content
+	.node-page {
+		display: none;
+	}
+
+}

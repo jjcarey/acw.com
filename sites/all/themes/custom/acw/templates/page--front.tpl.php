@@ -2,7 +2,16 @@
 <div role="document" class="page">
 
   <!--.l-header -->
-  <header role="banner" class="l-header">
+  <header role="banner" class="l-header" id="top">
+
+    <div class="container demo-2">
+      <div class="content">
+                <div id="large-header" class="large-header">
+                    <canvas id="demo-canvas"></canvas>
+                    <h1 class="main-title">Spirit</span></h1>
+                </div>
+            </div>
+    </div><!-- /container -->
 
     <?php if ($top_bar): ?>
       <!--.top-bar -->
@@ -101,8 +110,7 @@
   <?php endif; ?>
 
   <!--.l-main-->
-  <main role="main" class="row l-main">
-    <div class="<?php print $main_grid; ?> main columns">
+  <main role="main" class="l-main">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlight panel callout">
           <?php print render($page['highlighted']); ?>
@@ -131,7 +139,6 @@
       <?php endif; ?>
 
       <?php print render($page['content']); ?>
-    </div>
     <!--/.l-main region -->
 
     <?php if (!empty($page['sidebar_first'])): ?>
