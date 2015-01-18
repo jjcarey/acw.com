@@ -3,15 +3,8 @@
 
   <!--.l-header -->
   <header role="banner" class="l-header" id="top">
-
-    <div class="container demo-2">
-      <div class="content">
-                <div id="large-header" class="large-header">
-                    <canvas id="demo-canvas"></canvas>
-                    <h1 class="main-title">Spirit</span></h1>
-                </div>
-            </div>
-    </div><!-- /container -->
+    <div id="large-header" class="large-header">
+    <!-- <canvas id="dust_up"></canvas> -->
 
     <?php if ($top_bar): ?>
       <!--.top-bar -->
@@ -75,6 +68,8 @@
         <?php print render($page['hero_image']); ?>
       </div>
     </section>
+    
+    </div>
 
   </header>
   <!--/.l-header -->
