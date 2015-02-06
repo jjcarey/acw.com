@@ -1,0 +1,284 @@
+.cbp-af-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba($white, 0.65);
+	z-index: 500;
+	height: 230px;
+	overflow: hidden;
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	transition: height 0.3s;
+
+	.cbp-af-inner {
+		display: table;
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1.875em;
+	}
+
+	.siteLogo {
+		display: table-cell;
+		position: relative;
+		max-width: 280px;
+		min-width: 280px;
+		height: 230px;
+		vertical-align: middle;
+
+		h1 {
+			display: none;
+			text-transform: uppercase;
+			color: #333;
+			letter-spacing: 4px;
+			font-size: 4em;
+			margin: 0;
+			line-height: 75px;
+			
+			/* Transitions and class for reduced height */
+			-webkit-transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			transition: all 0.5s;
+		}
+
+		img {
+			/* Transitions and class for reduced height */
+			-webkit-transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			transition: all 0.5s;
+		}
+
+		.nameLogo {
+			cursor:pointer;
+
+			> div {
+				float: left;
+			}
+
+			.herLogo {
+				text-align: right;
+			}
+
+			.himLogo {
+				text-align: left;
+			}
+
+			.ampLogo {
+				margin: rem-calc(5 0 5 5);
+
+				.ampersand {
+					width: rem-calc(58);
+					// height: rem-calc(60);
+				}
+			}
+
+			&:hover {
+				h4 {
+					color: #BADA55;
+				}
+				.ampersand {
+					fill: #BADA55;
+				}
+			}
+		}
+	}
+
+	nav {
+		display: table-cell;
+		position: relative;
+		width: 100%;
+		vertical-align: top;
+
+		li {
+			display: table-cell;
+			vertical-align: middle;
+
+			a {
+				font-size: rem-calc(24);
+				font-weight: 300;
+				color: $gray;
+				text-shadow: 1px 1px 0px rgba($white, 0.75);
+
+				&:hover {
+					color: rgba($gray, 0.75);
+				}
+			}
+		}
+
+		.inline-list > li {
+			list-style: none;
+			float: none;
+			margin-left: 0;
+		}
+	}
+
+	ul {
+		display: table;
+		margin: 0;
+		margin-left: auto;
+		width: 100%;
+		max-width: 700px;
+		height: 230px;
+
+		text-align: center;
+		vertical-align: middle;
+
+		/* Transitions and class for reduced height */
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		transition: all 0.5s;
+	}
+	
+	  /////////////////////
+	 // Shrunken Header //
+	/////////////////////
+	&.cbp-af-header-shrink {
+		height: 100px;
+		background: rgba(#EEE, 0.95);
+
+		.cbp-af-inner {
+			height: 100px;
+		}
+
+		.siteLogo {
+			height: 100px;
+
+			h1 {
+				font-size: 2em;
+				line-height: 75px;
+			}
+
+			img {
+				-webkit-transform: scale(0.75);
+				-moz-transform: scale(0.75);
+				-o-transform: scale(0.75);
+				-ms-transform: scale(0.75);
+				transform: scale(0.75);
+			}
+
+			.nameLogo {
+			
+				> div {
+					float: left;
+
+					h4 {
+						margin: 0;
+						line-height: 2;
+					}
+				}
+
+				.herLogo { text-align: right; }
+				.himLogo { text-align: left; }
+
+				.ampLogo {
+					margin: rem-calc(0);
+
+					.ampersand {
+						width: rem-calc(50);
+					}
+				}
+			}
+		}
+
+		nav {
+
+			ul {
+				height: 100px;
+			}
+
+		}
+
+	}
+
+}
+
+
+  ///////////////////////////
+ // Example Media Queries //	- Still need to edit -
+///////////////////////////
+@media screen and (max-width: 55em) {
+	
+	.cbp-af-header {
+
+		.cbp-af-inner {
+			width: 100%;
+		}
+
+		.siteLogo {
+			height: 115px;
+			line-height: 115px;
+
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			float: none;
+		}
+
+		nav {
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			float: none;
+
+			li {
+				a {
+					margin: 0 10px;
+				}
+			}
+		}
+
+		ul {
+			margin-left: none;
+			max-width: none;
+
+			height: 115px;
+			line-height: 115px;
+		}
+
+		  /////////////////////
+		 // Shrunken Header //
+		/////////////////////
+		&.cbp-af-header-shrink {
+			height: 125px;
+
+			.siteLogo {
+				height: 75px;
+				line-height: 75px;
+
+				h1 {
+					font-size: 2em;
+				}
+			}
+
+			nav {
+
+				ul {
+					height: 45px;
+					line-height: 45px;
+				}
+
+				a {
+					font-size: 1em;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 32.25em) {
+	.cbp-af-header {
+		nav {
+			a {
+				font-size: 1em;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 24em) {
+	.cbp-af-header nav a,
+	.cbp-af-header.cbp-af-header-shrink nav a {
+		line-height: 1;
+	}
+}

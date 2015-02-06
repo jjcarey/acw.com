@@ -44,6 +44,7 @@ stylesheets[all][] = assets/scss/components/_typography.scss
 stylesheets[all][] = assets/scss/components/_buttons.scss
 stylesheets[all][] = assets/scss/components/_navigation.scss
 stylesheets[all][] = assets/scss/components/_header.scss
+stylesheets[all][] = assets/scss/components/_canvas.scss
 stylesheets[all][] = assets/scss/components/_footer.scss
 stylesheets[all][] = assets/scss/components/_blocks.scss
 
@@ -56,6 +57,8 @@ stylesheets[all][] = assets/scss/sections/_front.scss
 ; This file is empty, just uncomment this line and start editing!
 scripts[] = assets/js/rAF.js
 scripts[] = assets/js/dust-up.js
+scripts[] = assets/js/classie.js
+scripts[] = assets/js/cbpAnimatedHeader.js
 scripts[] = assets/js/theme.js
 
 

@@ -1,17 +1,74 @@
 .front {
+	
+	.page {
+		position: relative;
+	}
 
 	// Header // Home	// 100% of view height
-	// header {
-	// 	height: 100vh;
-	// }
+	header {
+		height: 100vh;
 
-	// The Couple 		// 70% of view height 
+		.large-header {
+			position: relative;
+
+			.headerSection {
+				padding-top: rem-calc(220);
+			}
+
+			.heroImg {
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				color: #f9f1e9;
+				text-align: center;
+				top: 55%;
+				left: 50%;
+				-moz-transform: translate3d(-50%,-50%,0);
+				-webkit-transform: translate3d(-50%,-50%,0);
+				transform: translate3d(-50%,-50%,0);
+
+				p {
+					padding-left: 10px;
+					font-family: "Clicker Script", cursive;
+					font-weight: normal;
+					font-size: rem-calc(100);
+					line-height: rem-calc(90);
+					text-align: center;
+					color: $white;
+					text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+				}
+		
+				&:before {
+					content: '';
+					position: absolute;
+					top: 45%;
+					left: 50%;
+					width: 37vw;
+					height: 40vw;
+					min-width: 3.5rem;
+					min-height: 3.5rem;
+					background: image-url('wrap.svg') no-repeat center center;
+					background-size: cover;
+					z-index: -1;
+					-moz-transform: translate3d(-50%,-50%,0);
+					-webkit-transform: translate3d(-50%,-50%,0);
+					transform: translate3d(-50%,-50%,0);
+				}
+			}
+		}
+	}
+
+	// The Couple 		// 75% of view height 
 	.block-views-couple-block {
-		height: 75vh;
-		background-color: rgba($black, 0.07);
+		min-height: 75vh;
+		padding-top: 60px;
+		padding-bottom: 100px;
+		background-color: $white;
 
 		h2 {
 			text-align: center;
+			margin-top: 0px;
+			margin-bottom: 20px;
 		}
 
 		.view {
@@ -19,13 +76,36 @@
 		}
 
 		.views-row {
-			@include grid-column(6);
+			@include grid-column($columns:5, $push:1, $collapse:true);
+
+			&.views-row-first {
+				.views-field-body {
+					padding-right: rem-calc(40);
+					border-right: 1px solid rgba($gray, 0.25);
+				}
+			}
+
+			&.views-row-last {
+				.views-field-body {
+					padding-left: rem-calc(40);
+				}
+			}
+
+			img {
+				display: block;
+				margin-bottom: rem-calc(30);
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 50%;
+			}
 		}	
 	}
 
 	// Photo Strip Break
 	.block-views-photo-strip-block {
-		
+		background-color: rgba($black, 0.1);
+		min-height: 300px;
+
 		.item-list {
 			
 			ul {
@@ -38,18 +118,20 @@
 				}
 			}
 		}
-
 	}
 
-	// Our Story 		// 50% of view height
+	// Our Story
 	.block-views-story-block {
 		clear: both;
-
-		height: 50vh;
-		background-color: rgba(red, 0.07);
+		padding-top: 60px;
+		padding-bottom: 100px;
+		min-height: 50vh;
+		background-color: $white;
 
 		h2 {
 			text-align: center;
+			margin-top: 0px;
+			margin-bottom: 20px;
 		}
 
 		.view {
@@ -57,17 +139,43 @@
 		}
 
 		.views-row {
-			@include grid-column(12);
+			@include grid-column($columns:10, $center:true, $collapse:true);
+
+			.views-field-body {
+
+				p {
+					-moz-column-count: 2;
+					-moz-column-gap: 60px;
+					-moz-column-rule: 1px solid rgba($gray, 0.25);
+					-webkit-column-count: 2;
+					-webkit-column-gap: 60px;
+					-webkit-column-rule: 1px solid rgba($gray, 0.25);
+					column-count: 2;
+					column-gap: 60px;
+					column-rule: 1px solid rgba($gray, 0.25);
+
+				}
+			}
 		}
 	}
+	  //////////
+	 // RSVP //
+	//////////
+	.block-views-rsvp-block,
+	.block-views-rsvp-block-1 {
+		// min-height: 75vh;
+		padding-top: 60px;
+		padding-bottom: 100px;
+		background-color: $white;
 
-	// RSVP 			// 75% of view height
-	.block-views-rsvp-block {
-		height: 75vh;
-		background-color: rgba(green, 0.07);
-
-		h2 {
-			text-align: center;
+		.view-header {
+			h2 {
+				margin-bottom: rem-calc(20);
+				font-weight: 400;
+				text-align: center;
+				color: $white;
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.4); 
+			}
 		}
 
 		.view {
@@ -76,20 +184,225 @@
 
 		.views-row {
 			@include grid-column(4);
+			position: relative;
+		}
+	}
 
+	.block-views-rsvp-block {
+		
+		.view-header {
+			p {
+				@include grid-column($columns:10, $center:true, $collapse:true);
+				color: $white;
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+			}
+
+			.rsvpButtons {
+				margin-top: rem-calc(30);
+				margin-bottom: rem-calc(30);
+				padding-bottom: rem-calc(30);
+				text-align: center;
+				border-bottom: 1px solid $white;
+
+				background-image: image-url('multiply_heart.png');
+				background-repeat: no-repeat;
+				background-position: center top;
+
+				a:first-child { margin-right: rem-calc(90); }
+				a:last-child { margin-left: rem-calc(90); }
+			}
+
+			a { display: inline-block; }
+		}
+
+		.views-row {
 			&.views-row-first {
-				@include grid-column(12);
+				display: none;
+			}
+
+			.views-field-field-content-area {
+				@extend h3;
+				margin-top: rem-calc(120);
+
+				font-weight: 300;
+				font-style: italic;
+				text-align: center;
+				color: $white;
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+			}
+			
+			&:before {								// Convert this to SVG!
+				content: " ";
+				position: absolute;
+				top: 4px;
+				left: 50%;
+				
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				transform: translateX(-50%);
+
+				width: rem-calc(92);
+				height: rem-calc(92);
+				border-radius: 50%;
+				background-color: $blueMultiply;
+
+				-webkit-background-blend-mode: multiply;
+				background-blend-mode: multiply;
+			}
+
+			&:after {								// Convert this to SVG!
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: 50%;
+				
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				transform: translateX(-50%);
+
+				width: rem-calc(100);
+				height: rem-calc(100);
+				border-radius: 50%;
+				border: 2px solid $blueMultiply;
+			}
+
+			&.views-row-3 {
+				&:before { background-color: $redMultiply; }
+				&:after { border: 2px solid $redMultiply; }
+			}
+
+			&.views-row-4 {
+				&:before { background-color: $yellowMultiply; }
+				&:after { border: 2px solid $yellowMultiply; }
 			}
 		}
 	}
 
+	.block-views-rsvp-block-1 {
+
+		.views-row {
+			padding-left: rem-calc(30);
+			padding-right: rem-calc(30);
+
+			&.views-row-first {
+				@include grid-column($columns:10, $center:true, $collapse:true);
+				margin-bottom: rem-calc(60);
+
+				.views-field-title {
+					display: none;
+				}
+			}
+
+			&.views-row-2 {
+				padding-left: rem-calc(20);
+				border-right: 1px solid $white;
+			}
+
+			&.views-row-last {
+				padding-right: rem-calc(20);
+				border-left: 1px solid $white;
+			}
+
+			.views-field-title {
+				span {
+					@extend h3;
+					display: block;
+					margin-top: rem-calc(120);
+
+					font-weight: 500;
+					text-align: center;
+					color: $white;
+					text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+				}
+			}
+
+			.views-field-field-content-area {
+				> div {
+					color: $white;
+					text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+				}
+			}
+
+			.views-field-field-rsvp-link {
+				margin-top: rem-calc(35);
+
+				div {
+					text-align: center;
+				}
+			}
+			
+			&:before {								// Convert this to SVG!
+				content: " ";
+				position: absolute;
+				top: 4px;
+				left: 50%;
+				
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				transform: translateX(-50%);
+
+				width: rem-calc(92);
+				height: rem-calc(92);
+				border-radius: 50%;
+				
+				background-image: image-url('past-icon.png');
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-color: $blueMultiply;
+			}
+
+			&:after {								// Convert this to SVG!
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: 50%;
+				
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				transform: translateX(-50%);
+
+				width: rem-calc(100);
+				height: rem-calc(100);
+				border-radius: 50%;
+				border: 2px solid $blueMultiply;
+			}
+
+			&.views-row-3 {
+				&:before {
+					background-image: image-url('present-icon.png');
+					background-color: $redMultiply;
+				}
+				&:after { border: 2px solid $redMultiply; }
+			}
+
+			&.views-row-4 {
+				&:before {
+					background-image: image-url('future-icon.png');
+					background-color: $yellowMultiply;
+				}
+				&:after { border: 2px solid $yellowMultiply; }
+			}
+
+			&.views-row-first {
+				&:before { content: none; }
+				&:after { content: none;; }
+			}
+		}
+	}
+
+
 	// Locations 		// 50% of view height
-	.block-views-locations-block {
-		height: 50vh;
-		background-color: rgba(blue, 0.07);
+	.block-views-locations-block,
+	.block-views-locations-block-1 {
+		min-height: 50vh;
+		padding-top: 60px;
+		padding-bottom: 100px;
+		background-color: $white;
 
 		h2 {
 			text-align: center;
+			margin-top: 0px;
+			margin-bottom: 20px;
 		}
 
 		.view {
@@ -97,17 +410,136 @@
 		}
 
 		.views-row {
-			@include grid-column(4);
+			padding-left: rem-calc(20);
+			padding-right: rem-calc(20);
+
+			.views-field-title {
+				padding-bottom: rem-calc(15);
+				text-align: center;
+
+				span {
+					@extend h3;
+					text-align: center;
+				}
+			}
+
+			.locationEntity {
+				text-align: center;
+
+				img {
+					width: 100%;
+					border: 3px solid $white;
+					-webkit-box-shadow: 0px 0px 0px 1px rgba($gray, 0.25);
+					-moz-box-shadow:    0px 0px 0px 1px rgba($gray, 0.25);
+					box-shadow:         0px 0px 0px 1px rgba($gray, 0.25);
+				}
+
+				p {
+					padding-top: rem-calc(10);
+					padding-bottom: rem-calc(10);
+					text-align: left;
+				}
+
+				a {
+					margin-top: rem-calc(20);
+				}
+			}
 		}	
 	}
 
+	.block-views-locations-block-1 {
+		.views-row {
+			@include grid-column(4);
+			padding-left: rem-calc(24);
+			padding-right: rem-calc(24);
+			
+			&:first-child {
+				padding-right: 0;
+
+				.views-field-title {
+					padding-right: rem-calc(28);
+				}
+
+				.locationEntity {
+					padding-right: rem-calc(28);
+				}
+			}
+			
+			&:nth-child(2) {
+				padding-left: 0;
+				padding-right: 0;
+
+				.views-field-title {
+					padding-left: rem-calc(26);
+					padding-right: rem-calc(26);
+				}
+
+				.locationEntity {
+					padding-left: rem-calc(26);
+					padding-right: rem-calc(26);
+
+					border-left: 1px solid rgba($gray, 0.25);
+					border-right: 1px solid rgba($gray, 0.25);
+				}
+			}
+
+			&:last-child {
+				padding-left: 0;
+
+				.views-field-title {
+					padding-left: rem-calc(28);
+				}
+
+				.locationEntity {
+					padding-left: rem-calc(28);
+				}
+			}
+		}
+	}
+
+	.block-views-locations-block {
+		.views-row {
+			@include grid-column($columns:5, $push:1);
+
+			&:first-child {
+				padding-right: 0;
+
+				.views-field-title {
+					padding-right: rem-calc(40);
+				}
+
+				.locationEntity {
+					padding-right: rem-calc(40);
+					border-right: 1px solid rgba($gray, 0.25);
+				}
+			}
+
+			&:last-child {
+				padding-left: 0;
+
+				.views-field-title {
+					padding-left: rem-calc(40);
+				}
+
+				.locationEntity {
+					padding-left: rem-calc(40);
+				}
+			}
+		}
+	}
+
+
 	// Registry 		// 50% of view height
 	.block-views-registry-block {
-		height: 50vh;
-		background-color: rgba(yellow, 0.01);
+		height: 96vh;
+		padding-top: 60px;
+		padding-bottom: 100px;
+		background-color: $white;
 
 		h2 {
 			text-align: center;
+			margin-top: 0px;
+			margin-bottom: 20px;
 		}
 
 		.view {

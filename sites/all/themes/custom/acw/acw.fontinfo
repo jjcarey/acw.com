@@ -1,7 +1,4 @@
 name = 'ACW Fonts'
-google_families[] = 'Arimo:400'
-google_families[] = 'Arimo:700'
-google_families[] = 'Arimo'
 google_families[] = 'Raleway:400'
 google_families[] = 'Raleway:500'
 google_families[] = 'Raleway:600'

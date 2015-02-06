@@ -14,33 +14,55 @@
 
     <!-- Title, slogan and menu -->
     <?php if ($alt_header): ?>
-      <section class="row <?php print $alt_header_classes; ?>">
+      <section class="headerSection row <?php print $alt_header_classes; ?>">
         <div class="large-12 columns">
-
-          <?php if ($linked_logo): print $linked_logo; endif; ?>
-
-          <?php if ($site_name): ?>
-            <?php if ($title): ?>
-              <div id="site-name" class="element-invisible">
-                <strong>
-                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-                </strong>
-              </div>
-            <?php else: /* Use h1 when the content title is empty */ ?>
-              <h1 id="site-name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </h1>
-            <?php endif; ?>
-          <?php endif; ?>
 
           <?php if ($site_slogan): ?>
             <h2 title="<?php print $site_slogan; ?>" class="site-slogan"><?php print $site_slogan; ?></h2>
           <?php endif; ?>
 
           <?php if ($alt_main_menu): ?>
-            <nav id="main-menu" class="navigation" role="navigation">
-              <?php print ($alt_main_menu); ?>
-            </nav> <!-- /#main-menu -->
+          <div class="cbp-af-header">
+            <div class="cbp-af-inner">
+              
+              <div class="siteLogo">
+                <?php if ($site_name): ?>
+                  <?php if ($title): ?>
+                    <div id="site-name" class="element-invisible">
+                      <strong>
+                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                      </strong>
+                    </div>
+                  <?php else: /* Use h1 when the content title is empty */ ?>
+                    <h1 id="site-name">
+                      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                    </h1>
+                  <?php endif; ?>
+                <?php endif; ?>
+                
+                <!-- <img src="http://placehold.it/200x100/336699/FFFFFF" class="placeholder" > -->
+                <?php // if ($linked_logo): print $linked_logo; endif; ?>
+
+                <div class="nameLogo">
+                  <div class="herLogo">
+                    <h4>Jessica<br>Alleven</h4>
+                  </div>
+                  <div class="ampLogo">
+                    <img src="<?php global $base_path; print $base_path.path_to_theme(); ?>/assets/images/ampersand.svg" class="ampersand" >
+                  </div>
+                  <div class="himLogo">
+                    <h4>Joseph<br>Carey</h4>
+                  </div>
+                </div>
+                
+              </div>
+
+              <nav id="main-menu" class="navigation" role="navigation">
+                <?php print ($alt_main_menu); ?>
+              </nav> <!-- /#main-menu -->
+
+            </div>
+          </div>
           <?php endif; ?>
 
           <?php if ($alt_secondary_menu): ?>
@@ -152,7 +174,7 @@
 
   <?php if (!empty($page['footer_first']) || !empty($page['footer_middle']) || !empty($page['footer_last'])): ?>
     <!--.l-footer-->
-    <footer class="l-footer panel row" role="contentinfo">
+    <footer class="l-footer" role="contentinfo">
       <?php if (!empty($page['footer_first'])): ?>
         <div id="footer-first" class="large-4 columns">
           <?php print render($page['footer_first']); ?>

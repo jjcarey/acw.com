@@ -20,11 +20,11 @@ Drupal.behaviors.scrolltoanchors = {
         var heightDifference = $(document).height() - $(window).height();
         if (validateSelector(hrefValue)) {
           if ($(hrefValue).length > 0) {
-            var linkOffset = $(this.hash).offset().top;
+            var linkOffset = $(this.hash).offset().top - 100;
             scrollToDestination(linkOffset, heightDifference);
           }
           else if ($('a[name=' + strippedHref + ']').length > 0) {
-            var linkOffset = $('a[name=' + strippedHref + ']').offset().top;
+            var linkOffset = $('a[name=' + strippedHref + ']').offset().top - 100;
             scrollToDestination(linkOffset, heightDifference);
           }
         }

@@ -1,0 +1,50 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,400,300);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
+body, p, li, ul, ol, span {
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-size: rem-calc(16);
+	font-weight: 400;
+	line-height: rem-calc(32);
+	color: $gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-weight: 300;
+	color: $gray;
+}
+
+h1 {
+	font-size: rem-calc(54);
+}
+
+h2 {
+	font-size: rem-calc(36);
+}
+
+h3 {
+	font-size: rem-calc(26);
+}
+
+h4 {
+	font-family: "Comfortaa", "Raleway", Helvetica, sans-serif;
+	font-size: rem-calc(26);
+	text-shadow: 1px 1px 0px rgba($white, 0.75);
+}
+
+h5 { }
+
+h6 { }
+
+p {
+	margin-bottom: 0;
+}
+
+a {
+
+	&:hover, &:focus {
+
+	}
+}
