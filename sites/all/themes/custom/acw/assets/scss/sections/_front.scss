@@ -4,7 +4,10 @@
 		position: relative;
 	}
 
-	// Header // Home	// 100% of view height
+
+	  //////////////////////////
+	 // Header // Home ////////
+	//////////////////////////
 	header {
 		height: 100vh;
 
@@ -58,7 +61,9 @@
 		}
 	}
 
-	// The Couple 		// 75% of view height 
+  	  ///////////////////////
+	 // The Couple  ////////
+	///////////////////////
 	.block-views-couple-block {
 		min-height: 75vh;
 		padding-top: 60px;
@@ -101,7 +106,9 @@
 		}	
 	}
 
-	// Photo Strip Break
+	  ///////////////////////
+	 // Photo Strip Break //
+	///////////////////////
 	.block-views-photo-strip-block {
 		background-color: rgba($black, 0.1);
 		min-height: 300px;
@@ -120,7 +127,10 @@
 		}
 	}
 
-	// Our Story
+
+	  ///////////////
+	 // Our Story //
+	///////////////
 	.block-views-story-block {
 		clear: both;
 		padding-top: 60px;
@@ -158,9 +168,11 @@
 			}
 		}
 	}
-	  //////////
-	 // RSVP //
-	//////////
+
+
+	  ///////////////
+	 // RSVP ///////
+	///////////////
 	.block-views-rsvp-block,
 	.block-views-rsvp-block-1 {
 		// min-height: 75vh;
@@ -391,7 +403,9 @@
 	}
 
 
-	// Locations 		// 50% of view height
+	  //////////////////
+	 // Locations /////
+	////////////////// 50% of view height
 	.block-views-locations-block,
 	.block-views-locations-block-1 {
 		min-height: 50vh;
@@ -528,8 +542,9 @@
 		}
 	}
 
-
-	// Registry 		// 50% of view height
+	  //////////////////
+	 // Registry //////
+	//////////////////
 	.block-views-registry-block {
 		height: 96vh;
 		padding-top: 60px;
@@ -537,23 +552,59 @@
 		background-color: $white;
 
 		h2 {
-			text-align: center;
 			margin-top: 0px;
-			margin-bottom: 20px;
+			margin-bottom: 60px;
+
+			font-weight: 400;
+			text-align: center;
+			color: $white;
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.4); 
 		}
 
 		.view {
 			@include grid-row();
 		}
 
+		.view-content {
+			@include grid-column($columns:12, $collapse:true);
+			display: table;
+		}
+
 		.views-row {
-			@include grid-column(4);
+			display: table-cell;
+
+			padding-left: rem-calc(20);
+			padding-right: rem-calc(20);
+
+			text-align: center;
+			vertical-align: top;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
 		}	
 	}
 
-	// Home page content
+
+	  ///////////////////////
+	 // Home page content //
+	///////////////////////
 	.node-page {
 		display: none;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

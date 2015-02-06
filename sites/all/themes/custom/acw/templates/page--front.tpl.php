@@ -169,36 +169,87 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>
     <?php endif; ?>
+
+    
+    <?php
+      $result = db_query("SELECT count(1) from {users}")->fetchField();
+      print '<ul><li>' . $result . '</li></ul>';
+    ?>
+
+    <?php
+      $directory = "sites/default/files/user_photos/";
+      $filecount = 0;
+      $files = glob($directory . "*.{png,gif,jpg,jpeg}", GLOB_BRACE);
+      
+      if ($files){
+        $filecount = count($files);
+      }
+
+      echo "There are $filecount files";    
+    ?>
+
+    
+
   </main>
   <!--/.l-main-->
 
-  <?php if (!empty($page['footer_first']) || !empty($page['footer_middle']) || !empty($page['footer_last'])): ?>
+  <?php // if (!empty($page['footer_first']) || !empty($page['footer_middle']) || !empty($page['footer_last'])): ?>
     <!--.l-footer-->
     <footer class="l-footer" role="contentinfo">
-      <?php if (!empty($page['footer_first'])): ?>
-        <div id="footer-first" class="large-4 columns">
-          <?php print render($page['footer_first']); ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($page['footer_middle'])): ?>
-        <div id="footer-middle" class="large-4 columns">
-          <?php print render($page['footer_middle']); ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($page['footer_last'])): ?>
-        <div id="footer-last" class="large-4 columns">
-          <?php print render($page['footer_last']); ?>
-        </div>
-      <?php endif; ?>
 
-      <?php if ($site_name) :?>
-        <div class="copyright large-12 columns">
-          &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
+      <div class="row">
+        <div class="large-12 columns">
+
+          <div class="siteLogo">
+            <?php if ($site_name): ?>
+              <?php if ($title): ?>
+                <div id="site-name" class="element-invisible">
+                  <strong>
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                  </strong>
+                </div>
+              <?php else: /* Use h1 when the content title is empty */ ?>
+                <h1 id="site-name">
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                </h1>
+              <?php endif; ?>
+            <?php endif; ?>
+            
+            <!-- <img src="http://placehold.it/200x100/336699/FFFFFF" class="placeholder" > -->
+            <?php // if ($linked_logo): print $linked_logo; endif; ?>
+
+            <div class="nameLogo">
+              <div class="herLogo">
+                <h4>Jessica<br>Alleven</h4>
+              </div>
+              <div class="ampLogo">
+                <img src="<?php global $base_path; print $base_path.path_to_theme(); ?>/assets/images/ampersand.svg" class="ampersand" >
+              </div>
+              <div class="himLogo">
+                <h4>Joseph<br>Carey</h4>
+              </div>
+            </div>  
+          </div>
+
+          <nav id="main-menu" class="navigation" role="navigation">
+            <?php print ($alt_main_menu); ?>
+          
+            <?php if ($site_name) :?>
+              <div class="copyright">
+                &copy; <?php print date('Y') . ' ' . t('Joseph Carey. All rights reserved  |  '); ?>
+                <a class="" href="contact_us">Contact Us</a>
+              </div>
+            <?php endif; ?>
+
+          </nav> <!-- /#main-menu -->
+
         </div>
-      <?php endif; ?>
+      </div>
+
     </footer>
     <!--/.footer-->
-  <?php endif; ?>
+
+  <?php // endif; ?>
 
   <?php if ($messages && $fett_messages_modal): print $messages; endif; ?>
 </div>
