@@ -25,6 +25,7 @@ regions[hero_image]     = Hero Image
 regions[help]           = Help
 regions[highlighted]    = Highlighted
 regions[content]        = Content
+regions[content_second] = Content Second
 regions[sidebar_first]  = Left Sidebar
 regions[sidebar_second] = Right Sidebar
 regions[footer_first]   = Footer first

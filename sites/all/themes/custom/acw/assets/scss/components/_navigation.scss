@@ -65,20 +65,29 @@
 			}
 
 			.ampLogo {
-				margin: rem-calc(5 0 5 5);
+				margin: 14px 7px 0 11px;
+				
+				svg {	
+					width: rem-calc(36);
+					height: auto;
 
-				.ampersand {
-					width: rem-calc(58);
-					// height: rem-calc(60);
+					#ampersand {
+						fill: $gray;
+					}
+					#shadow {
+						fill: rgba($white, 0.75);
+					}
 				}
 			}
 
 			&:hover {
 				h4 {
-					color: #BADA55;
+					color: lighten($blue, 20%);
 				}
-				.ampersand {
-					fill: #BADA55;
+				svg {
+					#ampersand {
+						fill: lighten($blue, 20%);
+					}
 				}
 			}
 		}
@@ -101,7 +110,7 @@
 				text-shadow: 1px 1px 0px rgba($white, 0.75);
 
 				&:hover {
-					color: rgba($gray, 0.75);
+					color: lighten($blue, 20%);
 				}
 			}
 		}
@@ -172,10 +181,11 @@
 				.himLogo { text-align: left; }
 
 				.ampLogo {
-					margin: rem-calc(0);
+					margin: 7px 7px 0 11px;
 
-					.ampersand {
-						width: rem-calc(50);
+					svg {	
+						width: rem-calc(30);
+						height: auto;
 					}
 				}
 			}

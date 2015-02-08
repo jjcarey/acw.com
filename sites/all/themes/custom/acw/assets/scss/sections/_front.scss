@@ -71,9 +71,39 @@
 		background-color: $white;
 
 		h2 {
+			position: relative;
 			text-align: center;
 			margin-top: 0px;
 			margin-bottom: 20px;
+			
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left:0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-out-black-left.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-out-black-right.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
 		}
 
 		.view {
@@ -82,6 +112,7 @@
 
 		.views-row {
 			@include grid-column($columns:5, $push:1, $collapse:true);
+			overflow: hidden;
 
 			&.views-row-first {
 				.views-field-body {
@@ -94,6 +125,11 @@
 				.views-field-body {
 					padding-left: rem-calc(40);
 				}
+			}
+
+			.views-field-body {
+				display: block;
+				height: 100%;
 			}
 
 			img {
@@ -139,9 +175,38 @@
 		background-color: $white;
 
 		h2 {
+			position: relative;
 			text-align: center;
 			margin-top: 0px;
 			margin-bottom: 20px;
+
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left:0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-bud-black-left.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-bud-black-right.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
 		}
 
 		.view {
@@ -182,11 +247,40 @@
 
 		.view-header {
 			h2 {
+				position: relative;
 				margin-bottom: rem-calc(20);
 				font-weight: 400;
 				text-align: center;
 				color: $white;
-				text-shadow: 1px 1px 1px rgba(0,0,0,0.4); 
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
+				&:before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left:0;
+
+					width: rem-calc(200);
+					height: rem-calc(40);
+
+					background: image-url('deco-full-white-left.png');
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+				}
+
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					right: 0;
+
+					width: rem-calc(200);
+					height: rem-calc(40);
+
+					background: image-url('deco-full-white-right.png');
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+				}
 			}
 		}
 
@@ -227,6 +321,16 @@
 			a { display: inline-block; }
 		}
 
+		h1 {
+			position: relative;
+			padding: rem-calc(15);
+			font-family: "Comfortaa", "Raleway", Helvetica, sans-serif;
+			text-align: center;
+			font-weight: 500;
+			color: white;
+			z-index: 1;
+		}
+
 		.views-row {
 			&.views-row-first {
 				display: none;
@@ -234,7 +338,7 @@
 
 			.views-field-field-content-area {
 				@extend h3;
-				margin-top: rem-calc(120);
+				// margin-top: rem-calc(120);
 
 				font-weight: 300;
 				font-style: italic;
@@ -256,10 +360,7 @@
 				width: rem-calc(92);
 				height: rem-calc(92);
 				border-radius: 50%;
-				background-color: $blueMultiply;
-
-				-webkit-background-blend-mode: multiply;
-				background-blend-mode: multiply;
+				background-color: rgba($blueMultiply, 0.75);
 			}
 
 			&:after {								// Convert this to SVG!
@@ -275,17 +376,17 @@
 				width: rem-calc(100);
 				height: rem-calc(100);
 				border-radius: 50%;
-				border: 2px solid $blueMultiply;
+				border: 2px solid rgba($blueMultiply, 0.95);
 			}
 
 			&.views-row-3 {
-				&:before { background-color: $redMultiply; }
-				&:after { border: 2px solid $redMultiply; }
+				&:before { background-color: rgba($redMultiply, 0.95); }
+				&:after { border: 2px solid rgba($redMultiply, 0.95); }
 			}
 
 			&.views-row-4 {
-				&:before { background-color: $yellowMultiply; }
-				&:after { border: 2px solid $yellowMultiply; }
+				&:before { background-color: rgba($yellowMultiply, 0.95); }
+				&:after { border: 2px solid rgba($yellowMultiply, 0.95); }
 			}
 		}
 	}
@@ -303,6 +404,12 @@
 				.views-field-title {
 					display: none;
 				}
+			}
+	
+			&.views-row-2, 
+			&.views-row-3,
+			&.views-row-4 {
+				margin-top: -25px;
 			}
 
 			&.views-row-2 {
@@ -330,16 +437,24 @@
 
 			.views-field-field-content-area {
 				> div {
+					margin-bottom: rem-calc(85);
 					color: $white;
 					text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 				}
 			}
 
 			.views-field-field-rsvp-link {
-				margin-top: rem-calc(35);
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
 
 				div {
 					text-align: center;
+
+					a {
+						white-space: nowrap;
+					}
 				}
 			}
 			
@@ -360,7 +475,7 @@
 				background-image: image-url('past-icon.png');
 				background-position: 50% 50%;
 				background-repeat: no-repeat;
-				background-color: $blueMultiply;
+				background-color: rgba($blueMultiply, 0.95);
 			}
 
 			&:after {								// Convert this to SVG!
@@ -376,23 +491,23 @@
 				width: rem-calc(100);
 				height: rem-calc(100);
 				border-radius: 50%;
-				border: 2px solid $blueMultiply;
+				border: 2px solid rgba($blueMultiply, 0.95);
 			}
 
 			&.views-row-3 {
 				&:before {
 					background-image: image-url('present-icon.png');
-					background-color: $redMultiply;
+					background-color: rgba($redMultiply, 0.95);
 				}
-				&:after { border: 2px solid $redMultiply; }
+				&:after { border: 2px solid rgba($redMultiply, 0.95); }
 			}
 
 			&.views-row-4 {
 				&:before {
 					background-image: image-url('future-icon.png');
-					background-color: $yellowMultiply;
+					background-color: rgba($yellowMultiply, 0.95);
 				}
-				&:after { border: 2px solid $yellowMultiply; }
+				&:after { border: 2px solid rgba($yellowMultiply, 0.95); }
 			}
 
 			&.views-row-first {
@@ -414,9 +529,38 @@
 		background-color: $white;
 
 		h2 {
+			position: relative;
 			text-align: center;
 			margin-top: 0px;
 			margin-bottom: 20px;
+
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left:0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-out-black-left.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-out-black-right.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
 		}
 
 		.view {
@@ -427,6 +571,8 @@
 			padding-left: rem-calc(20);
 			padding-right: rem-calc(20);
 
+			overflow: hidden;
+
 			.views-field-title {
 				padding-bottom: rem-calc(15);
 				text-align: center;
@@ -435,6 +581,11 @@
 					@extend h3;
 					text-align: center;
 				}
+			}
+
+			.views-field-nothing {
+				position: relative;
+				height: 100%;
 			}
 
 			.locationEntity {
@@ -449,13 +600,21 @@
 				}
 
 				p {
+					margin-bottom: rem-calc(80);
+
 					padding-top: rem-calc(10);
 					padding-bottom: rem-calc(10);
 					text-align: left;
 				}
 
 				a {
-					margin-top: rem-calc(20);
+					position: absolute;
+					bottom: 60px;
+					left: 50%;
+					transform: translateX(-50%);
+
+					text-align: center;
+					white-space: nowrap;
 				}
 			}
 		}	
@@ -467,6 +626,13 @@
 			padding-left: rem-calc(24);
 			padding-right: rem-calc(24);
 			
+			&.views-row-1,
+			&.views-row-2 {
+				.views-field-nothing {
+					border-right: 1px solid rgba($gray, 0.25);
+				}
+			}
+
 			&:first-child {
 				padding-right: 0;
 
@@ -491,9 +657,6 @@
 				.locationEntity {
 					padding-left: rem-calc(26);
 					padding-right: rem-calc(26);
-
-					border-left: 1px solid rgba($gray, 0.25);
-					border-right: 1px solid rgba($gray, 0.25);
 				}
 			}
 
@@ -515,6 +678,12 @@
 		.views-row {
 			@include grid-column($columns:5, $push:1);
 
+			&.views-row-1 {
+				.views-field-nothing {
+					border-right: 1px solid rgba($gray, 0.25);
+				}
+			}
+
 			&:first-child {
 				padding-right: 0;
 
@@ -524,7 +693,6 @@
 
 				.locationEntity {
 					padding-right: rem-calc(40);
-					border-right: 1px solid rgba($gray, 0.25);
 				}
 			}
 
@@ -549,16 +717,45 @@
 		height: 96vh;
 		padding-top: 60px;
 		padding-bottom: 100px;
-		background-color: $white;
+		background-color: $gray;
 
 		h2 {
+			position: relative;
 			margin-top: 0px;
 			margin-bottom: 60px;
 
 			font-weight: 400;
 			text-align: center;
 			color: $white;
-			text-shadow: 1px 1px 1px rgba(0,0,0,0.4); 
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left:0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-bud-white-left.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-bud-white-right.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
 		}
 
 		.view {
@@ -577,11 +774,21 @@
 			padding-right: rem-calc(20);
 
 			text-align: center;
-			vertical-align: top;
+			vertical-align: middle;
 
 			img {
-				width: 100%;
+				max-width: 100%;
+				max-height: rem-calc(100);
+				width: auto;
 				height: auto;
+			}
+
+			&.views-row-first {
+				padding-left: 0;
+			}
+
+			&.views-row-last {
+				padding-right: 0;
 			}
 		}	
 	}

@@ -50,26 +50,35 @@ footer {
 				text-align: left;
 			}
 
-			.ampLogo {
-				margin: rem-calc(5 0 5 5);
-
-				.ampersand {
-					width: rem-calc(58);
-					// height: rem-calc(60);
-				}
-			}
-
 			h4 {
 				color: white;
 				text-shadow: none;
+			}
+
+			.ampLogo {
+				margin: 14px 7px 0 11px;
+				
+				svg {	
+					width: rem-calc(36);
+					height: auto;
+
+					#ampersand {
+						fill: $white;
+					}
+					#shadow {
+						fill: rgba($white, 0);
+					}
+				}
 			}
 
 			&:hover {
 				h4 {
 					color: lighten($blue, 20%);
 				}
-				.ampersand {
-					fill: lighten($blue, 20%);
+				svg {
+					#ampersand {
+						fill: lighten($blue, 20%);
+					}
 				}
 			}
 		}
