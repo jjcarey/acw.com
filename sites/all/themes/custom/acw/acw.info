@@ -48,6 +48,7 @@ stylesheets[all][] = assets/scss/components/_header.scss
 stylesheets[all][] = assets/scss/components/_canvas.scss
 stylesheets[all][] = assets/scss/components/_footer.scss
 stylesheets[all][] = assets/scss/components/_blocks.scss
+stylesheets[all][] = assets/scss/components/_users.scss
 
 ; Sections
 stylesheets[all][] = assets/scss/sections/_global.scss

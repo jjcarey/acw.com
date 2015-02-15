@@ -1,0 +1,286 @@
+.page-user {
+
+	> div {
+
+		label {
+			font-size: rem-calc(18);
+			color: $gray;
+			cursor: auto;
+		}
+
+		.description {
+			display: block;
+			font-size: rem-calc(12);
+			line-height: rem-calc(20);
+			font-style: italic;
+			color: rgba($gray, 0.5);
+		}
+
+		form {
+			@include grid-row();
+
+			> div {
+				@include grid-column($columns:10, $center:true);
+					
+				// Step #1 - User Registration 
+				#edit-account {
+					margin-top: rem-calc(140);
+					margin-bottom: rem-calc(20);
+					padding-bottom: rem-calc(10);
+					border-bottom: 1px solid rgba($gray, 0.2);
+
+					@extend .circleNum;
+					
+					// Email Input
+					.form-item-mail {
+						label {
+							width: 100%;
+						}
+
+						input {
+							width: 50%;
+							display: block;
+							float: left;
+						}
+
+						.description {
+							width: 50%;
+							display: block;
+							float: left;
+							padding-left: rem-calc(20);
+						}
+					}
+					
+					// Password 
+					.form-item-pass {
+						clear: both;
+						position: relative;
+						padding-top: rem-calc(10);
+
+						.form-item-pass-pass1, 
+						.form-item-pass-pass2 {
+							width: 50%;
+							display: block;
+							float: left;
+							margin: rem-calc(5 0);
+
+						}
+
+						.description {
+							float: none;
+							clear: both;
+						}
+
+						.password-suggestions {
+							width: 47%;
+							display: block;
+							float: right;
+							clear: none;
+						}
+
+						input {
+							width: 100%;
+						}
+
+						.password-strength {
+							position: absolute;
+							top: rem-calc(12);
+							right: 0;
+							margin: 0;
+						}
+
+						div.password-confirm {
+							display: none;
+						}
+					}
+
+					label {
+						font-size: rem-calc(18);
+						color: $gray;
+						cursor: auto;
+						display: inline-block;
+					}
+
+					.form-item .description,
+					.description li {
+						font-size: rem-calc(12);
+						line-height: rem-calc(20);
+						font-style: italic;
+						color: rgba($gray, 0.5);
+					}
+					
+					input { width: auto; }
+					
+				}
+				
+				// Step #2  &  Step #3 Wrapper Wrap
+				#edit-profile-main {
+					clear: both;
+					border: 0;
+					padding: 0;
+					margin: 0;
+
+					legend {
+						display: none;
+					}
+
+					.fieldset-wrapper {
+
+						.required-fields {
+							position: relative;
+							padding-bottom: rem-calc(10);
+							// border-bottom: 1px solid rgba($gray, 0.2);
+
+							h3 {
+								display: none;
+							}
+
+							label {
+								font-size: rem-calc(18);
+								color: $gray;
+								cursor: auto;
+								display: inline-block;
+							}
+
+							> div {
+								width: 50%;
+								display: block;
+								float: left;
+								padding-right: rem-calc(10);
+								padding-top: rem-calc(5);
+								padding-bottom: rem-calc(5);
+							}
+
+							.description p {
+								font-size: rem-calc(12);
+								line-height: rem-calc(20);
+								font-style: italic;
+								color: rgba($gray, 0.5);
+							}
+
+
+							// Step #2 - Personal Information
+							&:first-child {
+								margin: rem-calc(130 0 30);
+								border-bottom: 1px solid rgba($gray, 0.2);
+								
+								@extend .circleNum;
+								&:before {
+									content: "2" !important;
+									top: -120px !important;
+									background-color: rgba($redMultiply, 0.75) !important;
+								}
+								&:after {
+									top: -124px !important;
+									border: 2px solid rgba($redMultiply, 0.75) !important;
+								}
+
+								> div {
+									
+									&:nth-child(3) {
+										padding-right: 0;
+										padding-left: rem-calc(10);
+									}
+
+									&:last-child {
+										float: none;
+										clear: both;
+									}
+								}
+							}
+
+							// Step #3 - RSVP
+							&:last-child {
+								clear: both;
+								margin: rem-calc(150 0 20);
+								
+								@extend .circleNum;
+								&:before {
+									content: "3" !important;
+									top: -120px !important;
+									background-color: rgba($yellowMultiply, 0.75) !important;
+								}
+								&:after {
+									top: -124px !important;
+									border: 2px solid rgba($yellowMultiply, 0.75) !important;
+								}
+
+								> div {
+									width: 33%;
+									text-align: center;
+									
+									input {
+										width: 20%;
+										margin: 0 auto;
+									}
+
+									.form-type-radio {
+										input {
+											width: auto;
+										}
+									}
+
+									&:last-child {
+										float: none;
+										clear: both;
+										width: 75%;
+										margin: 0 auto;
+										padding-top: 20px;
+
+										input {
+											width: 100%;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.circleNum {
+	&:before {
+		content: "1";
+		position: absolute;
+		top: 140px;
+		left: 50%;
+		
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		transform: translateX(-50%);
+
+		width: rem-calc(92);
+		height: rem-calc(92);
+		border-radius: 50%;
+		background-color: rgba($blueMultiply, 0.75);
+
+		padding: 2.2rem 0;
+		font-size: 62px;
+		font-family: "Comfortaa","Raleway",Helvetica,sans-serif;
+		text-align: center;
+		font-weight: 500;
+		color: white;
+		z-index: 1;
+	}
+
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 136px;
+		left: 50%;
+		
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		transform: translateX(-50%);
+
+		width: rem-calc(100);
+		height: rem-calc(100);
+		border-radius: 50%;
+		border: 2px solid rgba($blueMultiply, 0.75);
+	}
+}
+
+

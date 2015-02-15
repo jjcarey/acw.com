@@ -7,23 +7,35 @@
     	  // Removed .displaycount from bottom  //
     	 //  Prepended it to the block circles //
     	////////////////////////////////////////
-    	var $photo = jQuery('.block-views-rsvp-block .views-row-2');
-    	var $user = jQuery('.block-views-rsvp-block .views-row-3');
-    	var $message = jQuery('.block-views-rsvp-block .views-row-4');
+    	if (jQuery( "body" ).hasClass( "logged-in" )) {
+    		jQuery('.displayCount').css("display", "none");
 
-    	var $photoNum = jQuery('.displayCount .photoUpNum');
-    	var $userNum = jQuery('.displayCount .userNum');
-    	var $messageNum = jQuery('.displayCount .messageNum h1');
+    	} else {
+    		var $photo = jQuery('.block-views-rsvp-block .views-row-2');
+	    	var $user = jQuery('.block-views-rsvp-block .views-row-3');
+	    	var $message = jQuery('.block-views-rsvp-block .views-row-4');
 
-    	$photo.prepend($photoNum);
-    	$user.prepend($userNum);
-    	$message.prepend($messageNum);
+	    	var $photoNum = jQuery('.displayCount .photoUpNum');
+	    	var $userNum = jQuery('.displayCount .userNum');
+	    	var $messageNum = jQuery('.displayCount .messageNum h1');
 
-    	// Remove container
-    	jQuery('.displayCount').remove('.messageNum');
+	    	$photo.prepend($photoNum);
+	    	$user.prepend($userNum);
+	    	$message.prepend($messageNum);
+
+	    	// Remove container
+	    	jQuery('.displayCount').remove('.messageNum');
+    	}
 		  /////////
 		 // END //
 		/////////
+
+		if (jQuery('section.block-views').hasClass('block-views-locations-block-1')) {
+    		jQuery('.block-views-locations-block #locations').removeAttr('id');
+    		jQuery('.block-views-locations-block').css("display", "none");
+    	}
+
+    	jQuery('#edit-mail').removeAttr('size');
 
 		  ///////////////////////////////////////
 		 // Logo Link for front and not-front //
@@ -40,6 +52,11 @@
 				window.location.hash = 'home';
 			});
 		});
+
+		$home.click(function() {
+			document.location.href = "/";
+		});
+
 		  /////////
 		 // END //
 		/////////

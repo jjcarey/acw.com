@@ -1,4 +1,5 @@
-.cbp-af-header {
+.cbp-af-header,
+.cbp-af-header-g {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -12,6 +13,7 @@
 	transition: height 0.3s;
 
 	.cbp-af-inner {
+		// position: relative;
 		display: table;
 		width: 100%;
 		max-width: 1000px;
@@ -142,9 +144,10 @@
 	  /////////////////////
 	 // Shrunken Header //
 	/////////////////////
-	&.cbp-af-header-shrink {
+	&.cbp-af-header-shrink,
+	&.cbp-af-header-global {
 		height: 100px;
-		background: rgba(#EEE, 0.95);
+		background: rgba(227, 232, 237, 0.95);
 
 		.cbp-af-inner {
 			height: 100px;
@@ -200,92 +203,119 @@
 	}
 }
 
+#secondary-menu-links {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	display: block;
+	text-align: right;
+	// padding-right: 40px;
+	height: 10px;
+
+	li {
+		list-style: none;
+		float: none;
+		margin-left: 0;
+	}
+
+	a {
+		font-size: rem-calc(14);
+		font-weight: 600;
+		color: $gray;
+		text-transform: uppercase;
+
+		&:hover {
+			color: #669bcc;
+		}
+	}
+}
+
 
   ///////////////////////////
  // Example Media Queries //	- Still need to edit -
 ///////////////////////////
-@media screen and (max-width: 55em) {
+// @media screen and (max-width: 55em) {
 	
-	.cbp-af-header {
+// 	.cbp-af-header {
 
-		.cbp-af-inner {
-			width: 100%;
-		}
+// 		.cbp-af-inner {
+// 			width: 100%;
+// 		}
 
-		.siteLogo {
-			height: 115px;
-			line-height: 115px;
+// 		.siteLogo {
+// 			height: 115px;
+// 			line-height: 115px;
 
-			display: block;
-			margin: 0 auto;
-			text-align: center;
-			float: none;
-		}
+// 			display: block;
+// 			margin: 0 auto;
+// 			text-align: center;
+// 			float: none;
+// 		}
 
-		nav {
-			display: block;
-			margin: 0 auto;
-			text-align: center;
-			float: none;
+// 		nav {
+// 			display: block;
+// 			margin: 0 auto;
+// 			text-align: center;
+// 			float: none;
 
-			li {
-				a {
-					margin: 0 10px;
-				}
-			}
-		}
+// 			li {
+// 				a {
+// 					margin: 0 10px;
+// 				}
+// 			}
+// 		}
 
-		ul {
-			margin-left: none;
-			max-width: none;
+// 		ul {
+// 			margin-left: none;
+// 			max-width: none;
 
-			height: 115px;
-			line-height: 115px;
-		}
+// 			height: 115px;
+// 			line-height: 115px;
+// 		}
 
-		  /////////////////////
-		 // Shrunken Header //
-		/////////////////////
-		&.cbp-af-header-shrink {
-			height: 125px;
+// 		  /////////////////////
+// 		 // Shrunken Header //
+// 		/////////////////////
+// 		&.cbp-af-header-shrink {
+// 			height: 125px;
 
-			.siteLogo {
-				height: 75px;
-				line-height: 75px;
+// 			.siteLogo {
+// 				height: 75px;
+// 				line-height: 75px;
 
-				h1 {
-					font-size: 2em;
-				}
-			}
+// 				h1 {
+// 					font-size: 2em;
+// 				}
+// 			}
 
-			nav {
+// 			nav {
 
-				ul {
-					height: 45px;
-					line-height: 45px;
-				}
+// 				ul {
+// 					height: 45px;
+// 					line-height: 45px;
+// 				}
 
-				a {
-					font-size: 1em;
-				}
-			}
-		}
-	}
-}
+// 				a {
+// 					font-size: 1em;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
-@media screen and (max-width: 32.25em) {
-	.cbp-af-header {
-		nav {
-			a {
-				font-size: 1em;
-			}
-		}
-	}
-}
+// @media screen and (max-width: 32.25em) {
+// 	.cbp-af-header {
+// 		nav {
+// 			a {
+// 				font-size: 1em;
+// 			}
+// 		}
+// 	}
+// }
 
-@media screen and (max-width: 24em) {
-	.cbp-af-header nav a,
-	.cbp-af-header.cbp-af-header-shrink nav a {
-		line-height: 1;
-	}
-}
+// @media screen and (max-width: 24em) {
+// 	.cbp-af-header nav a,
+// 	.cbp-af-header.cbp-af-header-shrink nav a {
+// 		line-height: 1;
+// 	}
+// }

@@ -87,15 +87,14 @@
               <nav id="main-menu" class="navigation" role="navigation">
                 <?php print ($alt_main_menu); ?>
               </nav> <!-- /#main-menu -->
+              
+              <!-- User Menu -->
+              <?php if ($alt_secondary_menu): ?>
+                  <?php print $alt_secondary_menu; ?><!-- /#secondary-menu -->
+              <?php endif; ?>
 
             </div>
           </div>
-          <?php endif; ?>
-
-          <?php if ($alt_secondary_menu): ?>
-            <nav id="secondary-menu" class="navigation" role="navigation">
-              <?php print $alt_secondary_menu; ?>
-            </nav> <!-- /#secondary-menu -->
           <?php endif; ?>
 
         </div>
@@ -120,6 +119,16 @@
     
     </div>
 
+    <?php if ($messages && !$fett_messages_modal): ?>
+      <!--.l-messages -->
+      <section class="l-messages row">
+        <div class="large-12 columns">
+          <?php if ($messages): print $messages; endif; ?>
+        </div>
+      </section>
+      <!--/.l-messages -->
+    <?php endif; ?>
+
   </header>
   <!--/.l-header -->
 
@@ -131,16 +140,6 @@
       </div>
     </section>
     <!--/.l-featured -->
-  <?php endif; ?>
-
-  <?php if ($messages && !$fett_messages_modal): ?>
-    <!--.l-messages -->
-    <section class="l-messages row">
-      <div class="large-12 columns">
-        <?php if ($messages): print $messages; endif; ?>
-      </div>
-    </section>
-    <!--/.l-messages -->
   <?php endif; ?>
 
   <?php if (!empty($page['help'])): ?>
@@ -293,7 +292,7 @@
             <?php if ($site_name) :?>
               <div class="copyright">
                 &copy; <?php print date('Y') . ' ' . t('Joseph Carey. All rights reserved  |  '); ?>
-                <a class="" href="contact_us">Contact Us</a>
+                <a class="" href="/node/60/">Contact Us</a>
               </div>
             <?php endif; ?>
 

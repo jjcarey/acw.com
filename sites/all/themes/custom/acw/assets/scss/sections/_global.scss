@@ -1,0 +1,216 @@
+body {
+	min-width: 880px;
+}
+
+.not-front{
+	.cbp-af-header-g {
+		position: absolute;
+		background: rgba(160, 183, 205, 0.5);
+	}
+
+	.main {
+		margin-top: rem-calc(120);
+		margin-bottom: rem-calc(60);
+
+		button, .button {
+			@extend .whiteBtn;
+		}
+
+		h1 {
+			@extend h2;
+			position: relative;
+			text-align: center;
+			margin-top: 0px;
+			margin-bottom: 20px;
+
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left:0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-out-black-left.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+
+				width: rem-calc(200);
+				height: rem-calc(40);
+
+				background: image-url('deco-out-black-right.png');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+		}
+
+		> form {
+			@include grid-row();
+
+			> div {
+				@include grid-column($columns:10, $center:true);
+				
+				#edit-field-name {
+					width: 50%;
+					float: left;
+					padding: rem-calc(0 20 0 0);
+				}
+
+				#edit-field-message {
+					width: 50%;
+					float: right;
+					padding: rem-calc(0 0 0 20);
+					margin-bottom: 40px;
+
+					.form-item {
+						margin-top: 5px;
+					}
+
+					.grippie {
+						display: none;
+					}
+				}
+
+				#edit-field-visibility {
+					width: 50%;
+					float: left;
+					padding: rem-calc(0 20 0 0);
+				}
+
+				button,
+				.button {
+					&.form-submit {
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		background: rgba(160, 183, 205, 0.5);
+
+		.siteLogo {
+			height: 160px;
+
+			h4 {
+				color: $gray;
+				text-shadow: 1px 1px 0px rgba($white, 0.75);
+			}
+
+			.nameLogo {
+				.ampLogo {
+					svg {
+						#ampersand { fill: $gray; }
+						#shadow { fill: rgba($white, 0.75); }
+					}	
+				}
+
+				&:hover {
+					svg {
+						#ampersand { fill: lighten($blue, 20%); }
+					}
+				}
+			}
+		}
+
+		nav {
+			height: 160px;
+
+			li {
+				a {
+					color: $gray;
+					text-shadow: 1px 1px 0px rgba($white, 0.75);
+
+					&:hover {
+						color: lighten($blue, 20%);
+					}
+				}
+			}
+		}
+		.copyright {
+			color: rgba($gray, 0.75);
+			text-shadow: 1px 1px 0px rgba($white, 0.75);
+
+			a {
+				color: rgba($gray, 0.75);
+				text-shadow: 1px 1px 0px rgba($white, 0.75);
+
+				&:hover {
+					color: lighten($blue, 20%);
+				}
+			}
+		}
+	}
+}
+
+.node-type-webform {
+
+	#node-60 {
+		@include grid-row;
+		
+		.submitted {
+			
+			> span {
+				display: block;
+				text-align: center;
+			}
+
+			span {
+				font-size: rem-calc(12);
+				line-height: rem-calc(20);
+				font-style: italic;
+				color: rgba($gray, 0.5);
+			}
+		}
+		
+		.content {
+			@include grid-column($columns:10, $center:true);
+			text-align: center;
+
+			label {
+				font-size: rem-calc(18);
+				color: $gray;
+				cursor: auto;
+				text-align: left;
+			}
+		}
+
+	}
+}
+
+//////////////////////////////////////
+//<-------- Sticky Footer --------->//
+body.not-front {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+
+	.page {
+		min-height: 100%;
+		position: relative;
+	}
+
+	.l-main {
+		padding-bottom: rem-calc(160);   /* Height of the footer */
+	}
+
+	footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: rem-calc(160);   /* Height of the footer */
+	}
+}
+
