@@ -57,8 +57,8 @@ stylesheets[all][] = assets/scss/sections/_front.scss
 
 ;-------------- S C R I P T -------------
 ; This file is empty, just uncomment this line and start editing!
-scripts[] = assets/js/rAF.js
-scripts[] = assets/js/dust-up.js
+; scripts[] = assets/js/rAF.js
+; scripts[] = assets/js/dust-up.js
 scripts[] = assets/js/classie.js
 scripts[] = assets/js/cbpAnimatedHeader.js
 scripts[] = assets/js/theme.js
