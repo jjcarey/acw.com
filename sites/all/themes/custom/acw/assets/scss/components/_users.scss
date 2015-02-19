@@ -137,7 +137,13 @@
 						padding-right: rem-calc(10);
 						padding-top: rem-calc(5);
 						padding-bottom: rem-calc(5);
-						margin-top: rem-calc(-20);
+						// margin-top: rem-calc(-20);
+
+						.form-item,
+						.form-actions {
+							margin-top: 0;
+							margin-bottom: 0;
+						}
 					}
 
 					.description p {
@@ -224,6 +230,14 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+.page-users-profiles {
+	.view-id-users_profiles {
+		table.views-table {
+			width: 100%;
 		}
 	}
 }
