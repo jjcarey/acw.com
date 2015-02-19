@@ -112,125 +112,111 @@
 					input { width: auto; }
 					
 				}
-				
-				// Step #2  &  Step #3 Wrapper Wrap
-				#edit-profile-main {
-					clear: both;
-					border: 0;
-					padding: 0;
-					margin: 0;
 
-					legend {
+				.required-fields {
+					clear: both;
+					position: relative;
+					padding-bottom: rem-calc(10);
+					// border-bottom: 1px solid rgba($gray, 0.2);
+
+					h3 {
 						display: none;
 					}
 
-					.fieldset-wrapper {
+					label {
+						font-size: rem-calc(18);
+						color: $gray;
+						cursor: auto;
+						display: inline-block;
+					}
 
-						.required-fields {
-							position: relative;
-							padding-bottom: rem-calc(10);
-							// border-bottom: 1px solid rgba($gray, 0.2);
+					> div {
+						width: 50%;
+						display: block;
+						float: left;
+						padding-right: rem-calc(10);
+						padding-top: rem-calc(5);
+						padding-bottom: rem-calc(5);
+					}
 
-							h3 {
-								display: none;
+					.description p {
+						font-size: rem-calc(12);
+						line-height: rem-calc(20);
+						font-style: italic;
+						color: rgba($gray, 0.5);
+					}
+
+
+					// Step #2 - Personal Information
+					&.group-your-info {
+						margin: rem-calc(130 0 30);
+						border-bottom: 1px solid rgba($gray, 0.2);
+						
+						@extend .circleNum;
+						&:before {
+							content: "2" !important;
+							top: -120px !important;
+							background-color: rgba($redMultiply, 0.75) !important;
+						}
+						&:after {
+							top: -124px !important;
+							border: 2px solid rgba($redMultiply, 0.75) !important;
+						}
+
+						> div {
+							
+							&:nth-child(3) {
+								padding-right: 0;
+								padding-left: rem-calc(10);
 							}
 
-							label {
-								font-size: rem-calc(18);
-								color: $gray;
-								cursor: auto;
-								display: inline-block;
-							}
-
-							> div {
-								width: 50%;
-								display: block;
-								float: left;
-								padding-right: rem-calc(10);
-								padding-top: rem-calc(5);
-								padding-bottom: rem-calc(5);
-							}
-
-							.description p {
-								font-size: rem-calc(12);
-								line-height: rem-calc(20);
-								font-style: italic;
-								color: rgba($gray, 0.5);
-							}
-
-
-							// Step #2 - Personal Information
-							&:first-child {
-								margin: rem-calc(130 0 30);
-								border-bottom: 1px solid rgba($gray, 0.2);
-								
-								@extend .circleNum;
-								&:before {
-									content: "2" !important;
-									top: -120px !important;
-									background-color: rgba($redMultiply, 0.75) !important;
-								}
-								&:after {
-									top: -124px !important;
-									border: 2px solid rgba($redMultiply, 0.75) !important;
-								}
-
-								> div {
-									
-									&:nth-child(3) {
-										padding-right: 0;
-										padding-left: rem-calc(10);
-									}
-
-									&:last-child {
-										float: none;
-										clear: both;
-									}
-								}
-							}
-
-							// Step #3 - RSVP
 							&:last-child {
+								float: none;
 								clear: both;
-								margin: rem-calc(150 0 20);
-								
-								@extend .circleNum;
-								&:before {
-									content: "3" !important;
-									top: -120px !important;
-									background-color: rgba($yellowMultiply, 0.75) !important;
+							}
+						}
+					}
+
+					// Step #3 - RSVP
+					&.group-rsvp {
+						clear: both;
+						margin: rem-calc(150 0 20);
+						
+						@extend .circleNum;
+						&:before {
+							content: "3" !important;
+							top: -120px !important;
+							background-color: rgba($yellowMultiply, 0.75) !important;
+						}
+						&:after {
+							top: -124px !important;
+							border: 2px solid rgba($yellowMultiply, 0.75) !important;
+						}
+
+						> div {
+							width: 33%;
+							text-align: center;
+							
+							input {
+								width: 20%;
+								margin: 0 auto;
+							}
+
+							.form-type-radio {
+								input {
+									width: auto;
 								}
-								&:after {
-									top: -124px !important;
-									border: 2px solid rgba($yellowMultiply, 0.75) !important;
-								}
+							}
 
-								> div {
-									width: 33%;
-									text-align: center;
-									
-									input {
-										width: 20%;
-										margin: 0 auto;
-									}
+							&:last-child {
+								float: none;
+								clear: both;
+								width: 75%;
+								margin: 0 auto;
+								padding-top: 20px;
 
-									.form-type-radio {
-										input {
-											width: auto;
-										}
-									}
-
-									&:last-child {
-										float: none;
-										clear: both;
-										width: 75%;
-										margin: 0 auto;
-										padding-top: 20px;
-
-										input {
-											width: 100%;
-										}
-									}
+								input {
+									width: 100%;
 								}
 							}
 						}
@@ -259,6 +245,7 @@
 
 		padding: 2.2rem 0;
 		font-size: 62px;
+		line-height: 35px;
 		font-family: "Comfortaa","Raleway",Helvetica,sans-serif;
 		text-align: center;
 		font-weight: 500;

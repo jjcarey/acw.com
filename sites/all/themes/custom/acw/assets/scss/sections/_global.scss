@@ -12,6 +12,14 @@ body {
 		background: rgba(160, 183, 205, 0.5);
 	}
 
+	.l-messages {
+
+		div.alert-box.alert {
+			margin-top: 120px;
+			margin-bottom: -80px;
+		}
+	}
+
 	.main {
 		margin-top: rem-calc(120);
 		margin-bottom: rem-calc(60);
