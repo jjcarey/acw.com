@@ -86,6 +86,21 @@
 		 // END //
 		/////////
 
+		   ////////////////////////////////////////
+		  //   Change the text on RSVP page     //
+		 //  and btn for better User feedback  //
+		////////////////////////////////////////
+
+		if (jQuery( "body" ).hasClass( "page-user-register" )) {
+			jQuery( 'body.page-user-register h1#page-title' ).text("Reply if you Please");
+			jQuery( 'body.page-user-register button#edit-submit' ).text("RSVP");
+		}
+
+		  /////////
+		 // END //
+		/////////
+
+
 
     }
   };
